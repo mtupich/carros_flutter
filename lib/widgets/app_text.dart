@@ -30,7 +30,10 @@ class AppText extends StatelessWidget {
       decoration: InputDecoration(
         labelText: labelText,
         hintText: hintText,
-        border: UnderlineInputBorder(),
+        // border: UnderlineInputBorder(),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(16),
+        ),
       ),
     );
   }

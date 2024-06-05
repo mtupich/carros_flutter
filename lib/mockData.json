@@ -1,0 +1,142 @@
+[
+    {
+    "id": 1,
+    "tipo": "classicos",
+    "nome": "Tucker 1948",
+    "desc": "Tucler ds",
+    "urlFoto": "https://www.chevrolet.com.br/content/dam/chevrolet/mercosur/brazil/portuguese/index/cars/cars-subcontent/09-images/onix-hatch-showroom-1920x960.jpg?imwidth=960"
+    },
+    {
+    "id": 2,
+    "tipo": "esportivos",
+    "nome": "Ferrari F40",
+    "desc": "Esportivo italiano clássico",
+    "urlFoto": "https://www.chevrolet.com.br/content/dam/chevrolet/mercosur/brazil/portuguese/index/cars/cars-subcontent/09-images/onix-hatch-showroom-1920x960.jpg?imwidth=960"
+    },
+    {
+    "id": 3,
+    "tipo": "classicos",
+    "nome": "Ford Mustang 1965",
+    "desc": "Um ícone americano",
+    "urlFoto": "https://www.chevrolet.com.br/content/dam/chevrolet/mercosur/brazil/portuguese/index/cars/cars-subcontent/09-images/onix-hatch-showroom-1920x960.jpg?imwidth=960"
+    },
+    {
+    "id": 4,
+    "tipo": "esportivos",
+    "nome": "Porsche 911",
+    "desc": "Desempenho alemão",
+    "urlFoto": "https://www.chevrolet.com.br/content/dam/chevrolet/mercosur/brazil/portuguese/index/cars/cars-subcontent/09-images/onix-hatch-showroom-1920x960.jpg?imwidth=960"
+    },
+    {
+    "id": 5,
+    "tipo": "classicos",
+    "nome": "Chevrolet Bel Air 1957",
+    "desc": "Estilo e classe dos anos 50",
+    "urlFoto": "https://www.chevrolet.com.br/content/dam/chevrolet/mercosur/brazil/portuguese/index/cars/cars-subcontent/09-images/onix-hatch-showroom-1920x960.jpg?imwidth=960"
+    },
+    {
+    "id": 6,
+    "tipo": "esportivos",
+    "nome": "Lamborghini Countach",
+    "desc": "Design arrojado e agressivo",
+    "urlFoto": "https://www.chevrolet.com.br/content/dam/chevrolet/mercosur/brazil/portuguese/index/cars/cars-subcontent/09-images/onix-hatch-showroom-1920x960.jpg?imwidth=960"
+    },
+    {
+    "id": 7,
+    "tipo": "classicos",
+    "nome": "Cadillac Eldorado 1959",
+    "desc": "Luxo dos anos 50",
+    "urlFoto": "https://www.chevrolet.com.br/content/dam/chevrolet/mercosur/brazil/portuguese/index/cars/cars-subcontent/09-images/onix-hatch-showroom-1920x960.jpg?imwidth=960"
+    },
+    {
+    "id": 8,
+    "tipo": "esportivos",
+    "nome": "McLaren F1",
+    "desc": "Velocidade máxima dos anos 90",
+    "urlFoto": "https://www.chevrolet.com.br/content/dam/chevrolet/mercosur/brazil/portuguese/index/cars/cars-subcontent/09-images/onix-hatch-showroom-1920x960.jpg?imwidth=960"
+    },
+    {
+    "id": 9,
+    "tipo": "classicos",
+    "nome": "Volkswagen Beetle 1960",
+    "desc": "O carro do povo",
+    "urlFoto": "https://www.chevrolet.com.br/content/dam/chevrolet/mercosur/brazil/portuguese/index/cars/cars-subcontent/09-images/onix-hatch-showroom-1920x960.jpg?imwidth=960"
+    },
+    {
+    "id": 10,
+    "tipo": "esportivos",
+    "nome": "Nissan GT-R",
+    "desc": "Desempenho japonês",
+    "urlFoto": "https://www.chevrolet.com.br/content/dam/chevrolet/mercosur/brazil/portuguese/index/cars/cars-subcontent/09-images/onix-hatch-showroom-1920x960.jpg?imwidth=960"
+    },
+    {
+    "id": 11,
+    "tipo": "classicos",
+    "nome": "Chevrolet Impala 1967",
+    "desc": "Poder americano",
+    "urlFoto": "https://www.chevrolet.com.br/content/dam/chevrolet/mercosur/brazil/portuguese/index/cars/cars-subcontent/09-images/onix-hatch-showroom-1920x960.jpg?imwidth=960"
+    },
+    {
+    "id": 12,
+    "tipo": "esportivos",
+    "nome": "Audi R8",
+    "desc": "Luxo e desempenho",
+    "urlFoto": "https://www.chevrolet.com.br/content/dam/chevrolet/mercosur/brazil/portuguese/index/cars/cars-subcontent/09-images/onix-hatch-showroom-1920x960.jpg?imwidth=960"
+    },
+    {
+    "id": 13,
+    "tipo": "classicos",
+    "nome": "Jaguar E-Type",
+    "desc": "Elegância britânica",
+    "urlFoto": "https://www.chevrolet.com.br/content/dam/chevrolet/mercosur/brazil/portuguese/index/cars/cars-subcontent/09-images/onix-hatch-showroom-1920x960.jpg?imwidth=960"
+    },
+    {
+    "id": 14,
+    "tipo": "esportivos",
+    "nome": "Aston Martin DB9",
+    "desc": "Estilo e performance",
+    "urlFoto": "https://www.chevrolet.com.br/content/dam/chevrolet/mercosur/brazil/portuguese/index/cars/cars-subcontent/09-images/onix-hatch-showroom-1920x960.jpg?imwidth=960"
+    },
+    {
+    "id": 15,
+    "tipo": "classicos",
+    "nome": "Mercedes-Benz 300SL",
+    "desc": "Elegância e inovação",
+    "urlFoto": "https://www.chevrolet.com.br/content/dam/chevrolet/mercosur/brazil/portuguese/index/cars/cars-subcontent/09-images/onix-hatch-showroom-1920x960.jpg?imwidth=960"
+    },
+    {
+    "id": 16,
+    "tipo": "esportivos",
+    "nome": "Ford GT",
+    "desc": "Performance americana",
+    "urlFoto": "https://www.chevrolet.com.br/content/dam/chevrolet/mercosur/brazil/portuguese/index/cars/cars-subcontent/09-images/onix-hatch-showroom-1920x960.jpg?imwidth=960"
+    },
+    {
+    "id": 17,
+    "tipo": "classicos",
+    "nome": "Plymouth Barracuda 1970",
+    "desc": "Muscle car clássico",
+    "urlFoto": "https://www.chevrolet.com.br/content/dam/chevrolet/mercosur/brazil/portuguese/index/cars/cars-subcontent/09-images/onix-hatch-showroom-1920x960.jpg?imwidth=960"
+    },
+    {
+    "id": 18,
+    "tipo": "esportivos",
+    "nome": "Chevrolet Corvette C8",
+    "desc": "Desempenho moderno",
+    "urlFoto": "https://www.chevrolet.com.br/content/dam/chevrolet/mercosur/brazil/portuguese/index/cars/cars-subcontent/09-images/onix-hatch-showroom-1920x960.jpg?imwidth=960"
+    },
+    {
+    "id": 19,
+    "tipo": "classicos",
+    "nome": "Dodge Charger 1969",
+    "desc": "Poder e estilo",
+    "urlFoto": "https://www.chevrolet.com.br/content/dam/chevrolet/mercosur/brazil/portuguese/index/cars/cars-subcontent/09-images/onix-hatch-showroom-1920x960.jpg?imwidth=960"
+    },
+    {
+    "id": 20,
+    "tipo": "esportivos",
+    "nome": "Lexus LFA",
+    "desc": "Inovação japonesa",
+    "urlFoto": "https://www.chevrolet.com.br/content/dam/chevrolet/mercosur/brazil/portuguese/index/cars/cars-subcontent/09-images/onix-hatch-showroom-1920x960.jpg?imwidth=960"
+    }
+]

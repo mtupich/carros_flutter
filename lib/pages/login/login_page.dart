@@ -1,3 +1,5 @@
+import 'package:carros_app_flutter/nav.dart';
+import 'package:carros_app_flutter/pages/home_page.dart';
 import 'package:carros_app_flutter/widgets/app_button.dart';
 import 'package:carros_app_flutter/widgets/app_text.dart';
 import 'package:flutter/material.dart';
@@ -99,7 +101,8 @@ class _LoginPageState extends State<LoginPage> {
     String login = _controllerLogin.text;
     String password = _controllerPassword.text;
 
-    print("Login: $login, password: $password");
+    push(context, HomePage(), true);
+    // print("Login: $login, password: $password");
   }
 
   String? _validateField(String? value, {required bool isLogin}) {
