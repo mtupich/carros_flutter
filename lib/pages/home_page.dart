@@ -18,18 +18,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  // _body() {
-  //   Future<List<Carro>> future = CarrosApi.getCarros();
-
-  //   return FutureBuilder(future: future,
-  //     builder: (context, snapshot) {
-  //       List<Carro>? carros = snapshot.data;
-  //       return _listView(carros!);
-  //     }
-  //   );
-  // }
-
-  Widget _body() {
+  _body() {
     Future<List<Carro>> future = CarrosApi.getCarros();
 
     return FutureBuilder<List<Carro>>(

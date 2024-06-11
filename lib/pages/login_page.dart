@@ -1,11 +1,11 @@
-import 'package:carros_app_flutter/nav.dart';
+import 'package:flutter/material.dart';
+import 'package:carros_app_flutter/nav.dart';  // Assuming you have a navigation helper
 import 'package:carros_app_flutter/pages/home_page.dart';
+import 'package:carros_app_flutter/pages/login/login_api.dart';
 import 'package:carros_app_flutter/widgets/app_button.dart';
 import 'package:carros_app_flutter/widgets/app_text.dart';
-import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
-
   LoginPage({super.key});
 
   @override
@@ -16,10 +16,11 @@ class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
 
   final _controllerLogin = TextEditingController();
-
   final _controllerPassword = TextEditingController();
-
   final _focusSenha = FocusNode();
+
+  final LoginApi _loginApi = LoginApi();
+  bool _isLoading = false;
 
   @override
   void initState() {
@@ -33,7 +34,15 @@ class _LoginPageState extends State<LoginPage> {
         backgroundColor: Colors.blue,
         title: Text("Carros"),
       ),
-      body: _body(),
+      body: Stack(
+        children: [
+          _body(),
+          if (_isLoading)
+            Center(
+              child: CircularProgressIndicator(),
+            ),
+        ],
+      ),
     );
   }
 
@@ -43,66 +52,54 @@ class _LoginPageState extends State<LoginPage> {
       child: ListView(
         padding: EdgeInsets.all(16),
         children: [
-          AppText(labelText: "Login",
-            hintText: "Digite seu login",
-            controller: _controllerLogin,
+          AppText(
+              labelText: "Login",
+              hintText: "Digite seu login",
+              controller: _controllerLogin,
               validator: (value) => _validateField(value, isLogin: true),
               keyboardType: TextInputType.emailAddress,
               textInputAction: TextInputAction.next),
-    
-            AppText(
-            labelText: "Password",
-            hintText:  "Digite seu password",
-            password: true,
-            controller: _controllerPassword,
-            validator: (value) => _validateField(value, isLogin: false),
-            keyboardType: TextInputType.number,
-            focusNode: _focusSenha),
+          AppText(
+              labelText: "Password",
+              hintText: "Digite seu password",
+              password: true,
+              controller: _controllerPassword,
+              validator: (value) => _validateField(value, isLogin: false),
+              keyboardType: TextInputType.emailAddress,
+              focusNode: _focusSenha),
           SizedBox(
             height: 24,
           ),
-          AppButton(text: "teste", onPressed: _onClickLogin)
+          AppButton(text: "Login", onPressed: _onClickLogin)
         ],
       ),
     );
   }
 
-  _text(
-    String labelText,
-    String hintText, {
-    bool password = false,
-    controller,
-    FormFieldValidator<String>? validator,
-    TextInputType? keyboardType,
-    TextInputAction? textInputAction,
-    FocusNode? focusNode,
-  }) {
-    return TextFormField(
-      validator: validator,
-      controller: controller,
-      obscureText: password,
-      keyboardType: keyboardType,
-      textInputAction: textInputAction,
-      focusNode: focusNode,
-      onFieldSubmitted: (String text) {
-      FocusScope.of(context).requestFocus(_focusSenha);
-      },
-      decoration: InputDecoration(
-        labelText: labelText,
-        hintText: hintText,
-        border: UnderlineInputBorder(),
-      ),
-    );
-  }
-
-  _onClickLogin() {
+  _onClickLogin() async {
     bool? formOk = _formKey.currentState?.validate();
 
-    String login = _controllerLogin.text;
-    String password = _controllerPassword.text;
+    if (formOk == true) {
+      setState(() {
+        _isLoading = true;
+      });
 
-    push(context, HomePage(), true);
-    // print("Login: $login, password: $password");
+      String login = _controllerLogin.text;
+      String password = _controllerPassword.text;
+
+      String message = await _loginApi.postData(login, password);
+
+      setState(() {
+        _isLoading = false;
+      });
+
+      if (message == "Deu certo!") {
+        print("Maria passei aqui");
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage()));
+      } else {
+        print(message);
+      }
+    }
   }
 
   String? _validateField(String? value, {required bool isLogin}) {

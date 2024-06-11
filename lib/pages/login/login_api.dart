@@ -1,13 +1,32 @@
 import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 class LoginApi {
-  static Future<bool> login(String login, String senha) async {
+  Future<String> postData(String username, String password) async {
+    final url = Uri.parse('https://cachorros-api.onrender.com/login');
+    final headers = {'Content-Type': 'application/json'};
+    final Map<String, String> body = {
+      'username': username,
+      'password': password,
+    };
 
-    var url = Uri.https('example.com', 'whatsit/create');
-    var response = await http.post(url, body: {'name': 'doodle', 'color': 'blue'});
-    print('Response status: ${response.statusCode}');
-    print('Response body: ${response.body}');
+    // Encode the body as JSON
+    final String jsonBody = jsonEncode(body);
 
-    return true; 
+    final response = await http.post(url, headers: headers, body: jsonBody);
+
+    if (response.statusCode == 200) {
+      String data = response.body;
+
+      var decodedData = jsonDecode(data);
+
+      if (decodedData['status'] == 'Ok') {
+        return decodedData['message'];
+      } else {
+        return 'Erro na autenticação';
+      }
+    } else {
+      return 'Erro ${response.statusCode}';
+    }
   }
 }
