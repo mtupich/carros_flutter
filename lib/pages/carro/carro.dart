@@ -7,7 +7,7 @@ class Carro {
 
   Carro({this.id, this.tipo, this.nome, this.desc, this.urlFoto});
 
-  Carro.fromJson(Map<String, dynamic> json) {
+  Carro.fromJson(Map<dynamic, dynamic> json) {
     id = json['id'];
     tipo = json['tipo'];
     nome = json['nome'];

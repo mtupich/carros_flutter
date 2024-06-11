@@ -1,13 +1,20 @@
-import 'package:carros_app_flutter/pages/carro/carro.dart';
+import 'package:flutter/services.dart';
+import 'dart:convert';
+import 'carro.dart';
 
 class CarrosApi {
-  static List<Carro> getCarros() {
-    final List<Carro> carros = [];
+  static Future<List<Carro>> getCarros() async {
+    try {
+      // Carregar o arquivo JSON
+      String jsonString = await rootBundle.loadString('assets/mockData.json');
+      List<dynamic> jsonResponse = json.decode(jsonString);
 
-    carros.add(Carro(nome: "carrortyuiopoiuygfdfghjkjhgfghjkliuhygfghj1", urlFoto: "https://www.chevrolet.com.br/content/dam/chevrolet/mercosur/brazil/portuguese/index/cars/cars-subcontent/09-images/onix-hatch-showroom-1920x960.jpg?imwidth=960"));
-    carros.add(Carro(nome: "carro2", urlFoto: "https://www.chevrolet.com.br/content/dam/chevrolet/mercosur/brazil/portuguese/index/cars/cars-subcontent/09-images/onix-hatch-showroom-1920x960.jpg?imwidth=960"));
-    carros.add(Carro(nome: "carro3", urlFoto: "https://www.chevrolet.com.br/content/dam/chevrolet/mercosur/brazil/portuguese/index/cars/cars-subcontent/09-images/onix-hatch-showroom-1920x960.jpg?imwidth=960"));
-
-    return carros;
+      final List<Carro> carros = jsonResponse.map((map) => Carro.fromJson(map)).toList();
+      
+      return carros;
+    } catch (error) {
+      print("Erro ao carregar dados: $error");
+      throw error;
+    }
   }
 }

@@ -18,9 +18,47 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  _body() {
-    List<Carro> carros = CarrosApi.getCarros();
+  // _body() {
+  //   Future<List<Carro>> future = CarrosApi.getCarros();
 
+  //   return FutureBuilder(future: future,
+  //     builder: (context, snapshot) {
+  //       List<Carro>? carros = snapshot.data;
+  //       return _listView(carros!);
+  //     }
+  //   );
+  // }
+
+  Widget _body() {
+    Future<List<Carro>> future = CarrosApi.getCarros();
+
+    return FutureBuilder<List<Carro>>(
+      future: future,
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          // Enquanto os dados estão sendo carregados, mostra um indicador de progresso
+
+          return Center(child: CircularProgressIndicator());
+        } else if (snapshot.hasError) {
+          // Se ocorreu um erro ao carregar os dados, exibe uma mensagem de erro
+
+          return Center(child: Text('Erro ao carregar dados'));
+        } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+          // Se não há dados disponíveis, exibe uma mensagem apropriada
+
+          return Center(child: Text('Nenhum carro encontrado'));
+        } else {
+          // Quando os dados são carregados com sucesso, exibe a lista
+
+          List<Carro> carros = snapshot.data!;
+
+          return _listView(carros);
+        }
+      },
+    );
+  }
+
+  _listView(List<Carro> carros) {
     return Container(
       padding: EdgeInsets.all(16),
       child: ListView.builder(
