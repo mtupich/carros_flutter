@@ -1,6 +1,5 @@
+import 'package:carros_app_flutter/pages/home/home_page.dart';
 import 'package:flutter/material.dart';
-import 'package:carros_app_flutter/nav.dart';  // Assuming you have a navigation helper
-import 'package:carros_app_flutter/pages/home_page.dart';
 import 'package:carros_app_flutter/pages/login/login_api.dart';
 import 'package:carros_app_flutter/widgets/app_button.dart';
 import 'package:carros_app_flutter/widgets/app_text.dart';

@@ -1,5 +1,5 @@
-import 'package:carros_app_flutter/nav.dart';
-import 'package:carros_app_flutter/pages/login_page.dart';
+import 'package:carros_app_flutter/pages/login/login_page.dart';
+import 'package:carros_app_flutter/utils/nav.dart';
 import 'package:flutter/material.dart';
 
 class DrawerList extends StatelessWidget {

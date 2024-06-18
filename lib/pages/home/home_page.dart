@@ -1,6 +1,7 @@
 import 'package:carros_app_flutter/drawer_list.dart';
 import 'package:carros_app_flutter/pages/carro/carro.dart';
 import 'package:carros_app_flutter/pages/carro/carros_api.dart';
+import 'package:carros_app_flutter/pages/carro/carros_listview.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -8,13 +9,27 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.blue,
-        title: Text("Carros"),
+    return DefaultTabController (
+      length: 3,
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.blue,
+          title: Text("Carros"),
+          bottom: TabBar(
+            tabs: [
+              Tab(text: "Classicos",),
+              Tab(text: "Esportivos",),
+              Tab(text: "Luxo",),
+            ],
+          ),
+        ),
+        body: TabBarView(children: [
+          CarrosListview(),
+          CarrosListview(),
+          CarrosListview(),
+        ],),
+        drawer: DrawerList(),
       ),
-      body: _body(),
-      drawer: DrawerList(),
     );
   }
 
